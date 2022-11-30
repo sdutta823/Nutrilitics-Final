@@ -62,7 +62,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
   }
   else if ($_POST['btnAction'] == 'Search')
   {
-     $ingredient_print = getIngredientByID($_POST['IngredientID']);
+    $ingredient_print = getIngredientByID($_POST['IngredientID']);
+    echo $ingredient_print['IngredientID'];
+    echo "  ";
+    echo $ingredient_print['Ingredient_Name'];
     
   }
 }
@@ -101,8 +104,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
   </div>  
 
 </form>
-<?php echo $ingredient_print['IngredientID'];?> <br>
-<?php echo $ingredient_print['Ingredient_Name'];?>
+
 <h3>List of Ingredients</h3>
 <div class="row justify-content-center">  
 <table class="w3-table w3-bordered w3-card-4 center" style="width:70%">
@@ -138,7 +140,7 @@ Delete?
 </thead>
 <?php foreach ($list_of_ingredient as $Ingredient_info): ?>
   <tr>
-     <td><?php echo $Ingredient_info['IngredientID']; echo ": ";?></td>
+     <td><?php echo $Ingredient_info['IngredientID'];?></td>
      
      <td><?php echo $Ingredient_info['Ingredient_Name']; ?></td>
      <td>
