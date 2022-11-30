@@ -1,0 +1,338 @@
+body{
+  font-family: Georgia, 'Times New Roman', Times, serif;
+font-weight: 500;
+font-size: 15px;
+line-height: 1.4;
+color: #f5953c;
+background-color: #091745;
+overflow-x: hidden;
+  background-position: center;
+
+width: 100%;
+display: -ms-flexbox;
+-ms-flex-wrap: wrap;
+flex-wrap: wrap;
+-ms-flex-pack: center;
+justify-content: center;
+padding-top: 20px;
+padding-bottom: 100px;
+}
+
+.sec-center {
+margin-top: 5%;
+position: relative;
+max-width: 100%;
+text-align: center;
+z-index: 200;
+}
+[type="checkbox"]:checked,
+[type="checkbox"]:not(:checked){
+position: absolute;
+left: -9999px;
+opacity: 0;
+pointer-events: none;
+}
+
+.dropdown:checked + label,
+.dropdown:not(:checked) + label{
+position: relative;
+font-family: Georgia, 'Times New Roman', Times, serif;
+font-weight: 500;
+font-size: 15px;
+line-height: 2;
+height: 50px;
+transition: all 200ms linear;
+border-radius: 4px;
+width: 220px;
+letter-spacing: 1px;
+display: -webkit-inline-flex;
+display: -ms-inline-flexbox;
+display: inline-flex;
+-webkit-align-items: center;
+-moz-align-items: center;
+-ms-align-items: center;
+align-items: center;
+-webkit-justify-content: center;
+-moz-justify-content: center;
+-ms-justify-content: center;
+justify-content: center;
+-ms-flex-pack: center;
+text-align: center;
+border: none;
+background-color: #f5953c;
+cursor: pointer;
+color: #102770;
+box-shadow: 0 12px 35px 0 rgba(255,235,167,.15);
+}
+
+.dropdown:checked + label:before,
+.dropdown:not(:checked) + label:before{
+position: fixed;
+top: 0;
+left: 0;
+content: '';
+width: 100%;
+height: 100%;
+z-index: -1;
+cursor: auto;
+pointer-events: none;
+}
+.dropdown:checked + label:before{
+pointer-events: auto;
+}
+.dropdown:not(:checked) + label .uil {
+font-size: 24px;
+margin-left: 10px;
+transition: transform 200ms linear;
+}
+.dropdown:checked + label .uil {
+transform: rotate(180deg);
+font-size: 24px;
+margin-left: 10px;
+transition: transform 200ms linear;
+}
+.section-dropdown {
+margin-left: 45%;
+margin-right: 45%;
+position: center;
+padding: 5px;
+background-color: #fff;
+top: 90px;
+left: 0;
+border-radius: 4px;
+display: block;
+box-shadow: 0 14px 35px 0 rgba(9,9,12,0.4);
+z-index: 2;
+opacity: 0;
+pointer-events: none;
+transform: translateY(20px);
+transition: all 200ms linear;
+}
+
+.dropdown:checked ~ .section-dropdown{
+opacity: 1;
+pointer-events: auto;
+transform: translateY(0);
+}
+.section-dropdown:before {
+position: absolute;
+top: -20px;
+left: 0;
+width: 100%;
+height: 20px;
+content: '';
+display: block;
+z-index: 1;
+}
+.section-dropdown:after {
+position: absolute;
+top: -7px;
+left: 30px;
+width: 0; 
+height: 0; 
+border-left: 8px solid transparent;
+border-right: 8px solid transparent; 
+border-bottom: 8px solid #f5953c;
+content: '';
+display: block;
+z-index: 2;
+transition: all 200ms linear;
+}
+
+a {
+position: relative;
+color: #102770;
+transition: all 200ms linear;
+font-family: 'Roboto', sans-serif;
+font-weight: 500;
+font-size: 15px;
+border-radius: 2px;
+padding: 5px 0;
+padding-left: 20px;
+padding-right: 15px;
+
+text-align: left;
+text-decoration: none;
+display: -ms-flexbox;
+display: flex;
+-webkit-align-items: center;
+-moz-align-items: center;
+-ms-align-items: center;
+align-items: center;
+justify-content: space-between;
+  -ms-flex-pack: distribute;
+}
+
+a:hover {
+color: #091745;
+background-color: #f5953c;
+}
+
+a .uil {
+font-size: 22px;
+}
+.dropdown-sub:checked + label,
+.dropdown-sub:not(:checked) + label{
+position: relative;
+color: #f5953c;
+transition: all 200ms linear;
+font-family: 'Roboto', sans-serif;
+font-weight: 500;
+font-size: 15px;
+border-radius: 2px;
+padding: 5px 0;
+padding-left: 20px;
+padding-right: 15px;
+text-align: left;
+text-decoration: none;
+display: -ms-flexbox;
+display: flex;
+-webkit-align-items: center;
+-moz-align-items: center;
+-ms-align-items: center;
+align-items: center;
+justify-content: space-between;
+  -ms-flex-pack: distribute;
+  cursor: pointer;
+}
+.dropdown-sub:checked + label .uil,
+.dropdown-sub:not(:checked) + label .uil{
+font-size: 22px;
+}
+.dropdown-sub:not(:checked) + label .uil {
+transition: transform 200ms linear;
+}
+.dropdown-sub:checked + label .uil {
+transform: rotate(135deg);
+transition: transform 200ms linear;
+}
+.dropdown-sub:checked + label:hover,
+.dropdown-sub:not(:checked) + label:hover{
+  color: #091745;
+  background-color: #f5953c;
+}
+.section-dropdown-sub {
+position: relative;
+display: block;
+width: 100%;
+pointer-events: none;
+opacity: 0;
+max-height: 0;
+padding-left: 10px;
+padding-right: 3px;
+overflow: hidden;
+transition: all 200ms linear;
+}
+.dropdown-sub:checked ~ .section-dropdown-sub{
+pointer-events: auto;
+opacity: 1;
+max-height: 999px;
+}
+.section-dropdown-sub a {
+font-size: 14px;
+}
+.section-dropdown-sub a .uil {
+font-size: 20px;
+}
+
+
+.wrapper{
+    margin: 5%;
+    margin-left: 25%;
+}
+
+.wrapper2{
+    float: left;
+    background-color: gray;
+}
+
+.text-center{
+    text-align: center;
+}
+
+.menu ul{
+    list-style-type: none;
+}
+
+.menu ul li{
+    display: inline;
+}
+
+.container-4{
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  margin-left: 20%;
+  font-size: xx-large;
+}
+
+.container-3{
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: xx-large;
+  text-align: center;
+}
+
+.col-4{
+    width: 10%;
+    border: 2px solid black;
+    margin: 2%;
+    padding: 3%;
+    float: left;
+}
+
+.login{
+    padding: 10%;
+    margin: 10%;
+}
+
+.clearfix{
+    float: none;
+    clear: both;
+}
+
+.button-uva{
+  background-color: #091745;
+  color: white;
+  padding: 4%;
+  border-radius: 4px;
+
+
+}
+
+.insert-info{
+  font-size: 40px;
+  margin-left: 40%;
+}
+
+.button-submit{
+  width: 100px;
+  height: 50px;
+  color: white;
+  background-color: #091745;
+  margin-left: 50%;
+}
+
+.button-orange{
+  background-color: #f5953c;
+  color: #091745;
+  padding: 4%;
+  border-radius: 4px;
+}
+
+.button-orange2{
+  background-color: #f5953c;
+  color: #091745;
+  padding: 1%;
+  border-radius: 4px;
+}
+
+.w3-table w3-bordered w3-card-4 center{
+  font-size: 500px;
+  padding: 2px 3px 3px 2px;
+}
+
+.stuff{
+  padding: 20px;
+  text-align: center;
+  color: white;
+  background-color:#f5953c;
+  font-size: large;
+}
